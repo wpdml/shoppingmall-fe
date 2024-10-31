@@ -85,7 +85,7 @@ const productSlice = createSlice({
         state.error = action.payload;
         state.success = false;
       })
-      .addCase(getProductList.pending, (state, action) => {
+      .addCase(getProductList.pending, (state) => {
         state.loading = true;
       })
       .addCase(getProductList.fulfilled, (state, action) => {
@@ -95,7 +95,7 @@ const productSlice = createSlice({
       })
       .addCase(getProductList.rejected, (state, action) => {
         state.loading = false;
-        state.error=action.payload
+        state.error = action.payload;
       });
   },
 });
